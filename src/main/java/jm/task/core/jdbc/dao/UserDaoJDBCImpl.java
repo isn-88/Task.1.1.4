@@ -56,13 +56,13 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
 
-    public void saveUser(String name, String lastName, byte age) {
+    public void saveUser(String name, String lastName, int age) {
         PreparedStatement ps = null;
         try {
             ps = connect.getConnection().prepareStatement("INSERT INTO `users` (name, lastname, age) VALUE (?, ?, ?)");
             ps.setString(1, name);
             ps.setString(2, lastName);
-            ps.setByte(3, age);
+            ps.setInt(3, age);
             int rows = ps.executeUpdate();
             if (rows > 0) {
                 System.out.println("User с именем - " + name + " добавлен в базу данных");
@@ -85,7 +85,7 @@ public class UserDaoJDBCImpl implements UserDao {
         try {
             ps = connect.getConnection().prepareStatement("DELETE FROM  users WHERE id = ?");
             ps.setLong(1, id);
-            int result = ps.executeUpdate();
+            ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
