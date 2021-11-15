@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class  Util {
-    private final String dbURL = "jdbc:mysql://localhost:3306/intellij";
+    private final String dbURL = "jdbc:mysql://localhost:3306/hibernate";
     private final String dbUsername = "root";
     private final String dbPassword = "pass";
 
