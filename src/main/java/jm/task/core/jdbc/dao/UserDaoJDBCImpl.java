@@ -14,6 +14,7 @@ public class UserDaoJDBCImpl implements UserDao {
         connect = new Util();
     }
 
+    @Override
     public void createUsersTable() {
         Statement statement = null;
         try {
@@ -38,6 +39,7 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
 
+    @Override
     public void dropUsersTable() {
         Statement statement = null;
         try {
@@ -56,6 +58,7 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
 
+    @Override
     public void saveUser(String name, String lastName, int age) {
         PreparedStatement ps = null;
         try {
@@ -80,6 +83,7 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
 
+    @Override
     public void removeUserById(long id) {
         PreparedStatement ps = null;
         try {
@@ -100,6 +104,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     }
 
+    @Override
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         Statement statement = null;
@@ -129,6 +134,7 @@ public class UserDaoJDBCImpl implements UserDao {
         return users;
     }
 
+    @Override
     public void cleanUsersTable() {
         Statement statement = null;
         try {
